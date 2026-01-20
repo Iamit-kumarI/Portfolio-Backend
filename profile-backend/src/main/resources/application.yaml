@@ -1,0 +1,3 @@
+spring:
+  weather:
+    api: https://leetscan.vercel.app/amitK300
