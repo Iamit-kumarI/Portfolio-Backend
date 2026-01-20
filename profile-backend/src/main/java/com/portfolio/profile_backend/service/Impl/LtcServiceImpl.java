@@ -1,9 +1,8 @@
 package com.portfolio.profile_backend.service.Impl;
 
-import com.portfolio.profile_backend.Client.ExternalAPIClient;
+import com.portfolio.profile_backend.client.ExternalAPIClient;
 import com.portfolio.profile_backend.dto.APIResponse.LtcResponse;
 import com.portfolio.profile_backend.service.LtcService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
