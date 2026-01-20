@@ -25,6 +25,6 @@ public class LtcController {
     @GetMapping("/LeetCode")
     public ResponseEntity<LtcResponse.Root>getAllDetails(){
         LtcResponse.Root response=ltcService.getProfile();
-        return ResponseEntity.ok(response);//9
+        return ResponseEntity.ok(response);
     }
 }
