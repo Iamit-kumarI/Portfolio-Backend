@@ -1,5 +1,6 @@
 package com.portfolio.profile_backend.controller;
 
+import com.portfolio.profile_backend.dto.APIResponse.CodeChefResponse;
 import com.portfolio.profile_backend.dto.APIResponse.LtcResponse;
 import com.portfolio.profile_backend.service.LtcService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,13 @@ public class LtcController {
     }
 
     @GetMapping("/LeetCode")
-    public ResponseEntity<LtcResponse.Root>getAllDetails(){
+    public ResponseEntity<LtcResponse.Root>getLtcProfile(){
         LtcResponse.Root response=ltcService.getProfile();
+        return ResponseEntity.ok(response);
+    }
+    @GetMapping("/CodeChef")
+    public ResponseEntity<CodeChefResponse>getChfProfile(){
+        CodeChefResponse response=ltcService.chfProfile();
         return ResponseEntity.ok(response);
     }
 }

@@ -1,5 +1,6 @@
 package com.portfolio.profile_backend.client;
 
+import com.portfolio.profile_backend.dto.APIResponse.CodeChefResponse;
 import com.portfolio.profile_backend.dto.APIResponse.LtcResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -7,8 +8,11 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ExternalAPIClient {
-    @Value("${spring.weather.api}")
-    private String api;
+    @Value("${spring.ltc.api}")
+    private String LtcApi;
+
+    @Value(("${spring.codechef.api}"))
+    private String CodeChefAPI;
 
     private RestTemplate restTemplate;
 
@@ -17,6 +21,10 @@ public class ExternalAPIClient {
     }
 
     public LtcResponse.Root getLtcResponse(){
-        return restTemplate.getForObject(api,LtcResponse.Root.class);
+        return restTemplate.getForObject(LtcApi,LtcResponse.Root.class);
+    }
+
+    public CodeChefResponse getStarResponse(){
+        return restTemplate.getForObject(CodeChefAPI,CodeChefResponse.class);
     }
 }
