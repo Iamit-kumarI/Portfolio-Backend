@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 public class ExternalAPIClient {
     @Value("${spring.ltc.api}")
     private String LtcApi;
 
-    @Value(("${spring.codechef.api}"))
+    @Value("${spring.codechef.api}")
     private String CodeChefAPI;
 
     private RestTemplate restTemplate;
@@ -25,6 +29,7 @@ public class ExternalAPIClient {
     }
 
     public CodeChefResponse getStarResponse(){
+
         return restTemplate.getForObject(CodeChefAPI,CodeChefResponse.class);
     }
 }
