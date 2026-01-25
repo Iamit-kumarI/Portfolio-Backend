@@ -35,8 +35,8 @@ It provides APIs to:
 
 * 📊 Fetch coding stats from **LeetCode** and **CodeChef**
 * 📩 Send emails via **Gmail SMTP**
-* ⚡ Ready for deployment on **Render** or any cloud platform
-* 🔧 Easily configurable for personal use
+* ⚡ Ready for deployment on any cloud platform
+
 
 ---
 
@@ -65,7 +65,6 @@ ltc:
   api: https://leetscan.vercel.app/youusername
 ```
 
-Fetches your **LeetCode stats** and makes it accessible to the frontend.
 
 ---
 
@@ -82,8 +81,6 @@ Replace `youusername` in `application.yml`:
 codechef:
   api: https://cp-rating-api.vercel.app/codechef/youusername
 ```
-
-Fetches your **CodeChef profile** & **rating**.
 
 ---
 
