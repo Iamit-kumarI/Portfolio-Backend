@@ -21,7 +21,6 @@ Users can replace their username in the API URLs to map their own CodeChef and L
 
 * Fetch coding stats from **LeetCode** and **CodeChef**.
 * Send emails via contact form using Gmail SMTP.
-* Easily configurable with environment variables.
 * Ready for deployment on **Render** or any cloud platform.
 
 ---
