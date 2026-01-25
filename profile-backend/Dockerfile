@@ -1,19 +1,26 @@
+# -------- BUILD STAGE --------
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+
+WORKDIR /app
+
+COPY pom.xml .
+COPY .mvn .mvn
+COPY mvnw .
+RUN chmod +x mvnw
+
+RUN ./mvnw dependency:go-offline
+
+COPY src src
+RUN ./mvnw clean package -DskipTests
+
+
+# -------- RUN STAGE --------
 FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# install dos2unix to fix Windows line endings
-RUN apt-get update && apt-get install -y dos2unix
-
-COPY . .
-
-# fix mvnw line endings + permissions
-RUN dos2unix mvnw
-RUN chmod +x mvnw
-
-# build
-RUN ./mvnw clean package -DskipTests
+COPY --from=build /app/target/profile-backend-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/profile-backend-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "app.jar"]
