@@ -1,8 +1,0 @@
-spring:
-  ltc:
-    api: https://leetscan.vercel.app/amitK300
-  codechef:
-    api: https://cp-rating-api.vercel.app/codechef/amitK300
-  atcoder:
-    api: https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=amitK300&from_second=0
-#kj
