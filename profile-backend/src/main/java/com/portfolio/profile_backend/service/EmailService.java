@@ -15,8 +15,7 @@ public class EmailService {
     public void sendContactEmail(ContactRequest request) {
 
         SimpleMailMessage message = new SimpleMailMessage();
-
-        message.setFrom(System.getenv("MAIL_USERNAME"));
+        message.setFrom("amitkumaramitkumar15351@gmail.com");
         message.setTo("amitkumaramitkumar15351@gmail.com");
         message.setSubject("New Contact Form Message");
 
