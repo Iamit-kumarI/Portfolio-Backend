@@ -16,8 +16,8 @@ public class EmailService {
 
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setFrom(System.getenv("MAIL_USERNAME")); // 🔥 REQUIRED
-        message.setTo("amitkumaramitkumar15351@gmail.com"); // 🔥 REAL EMAIL
+        message.setFrom(System.getenv("MAIL_USERNAME"));
+        message.setTo("amitkumaramitkumar15351@gmail.com");
         message.setSubject("New Contact Form Message");
 
         message.setText(
